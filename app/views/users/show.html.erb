@@ -2,3 +2,35 @@
     <%= gravatar_for @user %>
     <%= @user.name %>
 </h1>
+<div class="container col-md-8 col-md-offset-2" id="show_user">
+    <div class="row">
+        <ul>
+            <div class="row">
+                <li class="col-md-3">AGE:</li>
+                <div class="col-md-6">
+                    <%= @user.age %>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <li class="col-md-3">COUNTRY:</li>
+                <div class="col-md-6">
+                    <%= @user.country %>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <li class="col-md-3">PROFILE:</li>
+                <div style="white-space:pre-wrap;" class="col-md-6"><%= @user.profile %></div>
+                <div class="col-md-3"></div>
+            </div>
+            </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
