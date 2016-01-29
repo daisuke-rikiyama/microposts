@@ -1,40 +1,52 @@
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-        <%= form_for(@user) do |f| %>
-        
-        <%= render 'shared/error_messages', object: f.object %> 
-        
-        
-            <%= f.label :name %>
-            <%= f.text_field :name %>
-            
-            
-            <%= f.label :age %>
-            <%= f.text_field :age %>
-            
-            
-            <%= f.label :country %>
-            <%= f.text_field :country %>
-            
-            
-            <%= f.label :email %>
-            <%= f.text_field :email %>
-            
-            
-            <%= f.label :password %>
-            <%= f.password_field :password %>
-            
-            
-            <%= f.label :password_confirmation, "Confirmation" %>
-            <%= f.password_field :password_confirmation %>
-            
-            <%= f.label :profile %>
-            <%= f.text_area :profile, rows: "10" %>
-            
-            
-            <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-            
-        <% end %>
-        
+<%= form_for(@user , html: {class: "form-horizontal"}) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <div class="form-group">
+        <%= f.label :name, class: "col-md-2 control-label" %>
+        <div class="col-md-10">
+            <%= f.text_field :name, size: 40, maxlength: 20, class: "form-control" %>
+        </div>
     </div>
-</div>
+    <div class="form-group">
+        <%= f.label :age, class: "col-md-2 control-label" %>
+        <div class="col-md-10">
+            <%= f.text_field :age, size: 40, maxlength: 20, class: "form-control" %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :country, class: "col-md-2 control-label" %>
+        <div class="col-md-10">
+            <%= f.text_field :country, size: 40, maxlength: 20, class: "form-control" %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :email, class: "col-md-2 control-label" %>
+        <div class="col-md-10">
+            <%= f.text_field :email, size: 40, maxlength: 255, class: "form-control" %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :password, class: "col-md-2 control-label" %>
+        <div class="col-md-10">
+            <%= f.password_field :password, size: 40, maxlength: 20, class: "form-control" %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :password_confirmation, "Confirmation", class: "col-md-2 control-label" %>
+        <div class="col-md-10">
+            <%= f.password_field :password_confirmation, size: 40, maxlength: 20, class: "form-control" %>
+        </div>
+    </div>
+    <div class="form-group">
+        <%= f.label :profile, class: "col-md-2 control-label" %>
+        <div class="col-md-10">
+            <%= f.text_area :profile, size: 40, rows: 5, maxlength: 255, class: "form-control" %>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
+        </div>
+    </div>
+<% end %>
