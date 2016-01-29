@@ -1,36 +1,33 @@
-<h1>
-    <%= gravatar_for @user %>
-    <%= @user.name %>
-</h1>
-<div class="container col-md-8 col-md-offset-2" id="show_user">
-    <div class="row">
-        <ul>
-            <div class="row">
-                <li class="col-md-3">AGE:</li>
-                <div class="col-md-6">
-                    <%= @user.age %>
-                </div>
-                <div class="col-md-3"></div>
-            </div>
+<div class="row">
+    <aside class="col-md-4">
+        <section class="user_info">
+            <h1>
+                <%= gravatar_for @user %>
+                <%= @user.name %>
+            </h1>
             <br>
             <br>
-            <div class="row">
-                <li class="col-md-3">COUNTRY:</li>
-                <div class="col-md-6">
-                    <%= @user.country %>
-                </div>
-                <div class="col-md-3"></div>
-            </div>
             <br>
-            <br>
-            <div class="row">
-                <li class="col-md-3">PROFILE:</li>
-                <div style="white-space:pre-wrap;" class="col-md-6"><%= @user.profile %></div>
-                <div class="col-md-3"></div>
-            </div>
-            </div>
-            </li>
-        </ul>
+            <ul>
+                <li>AGE: <%= @user.age %></li>
+                <br>
+                <br>
+                <li>COUNTRY: <%= @user.country %></li>
+                <br>
+                <br>
+                <li>
+                    PROFILE
+                    <div class="row" style="white-space:pre-wrap;"><%= @user.profile %></div>
+                </li>
+            </ul>
+        </section>
+    </aside>
+    <div class="col-md-8">
+        <% if @user.microposts.any? %>
+            <h3>Microposts (<%= @user.microposts.count %>)</h3>
+            <ol class="microposts">
+                <%= render @microposts %>
+            </ol>
+        <% end %>
     </div>
 </div>
-

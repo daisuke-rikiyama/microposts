@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
     validates :age , numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than: 120}
     validates :country, length: { maximum: 50 }
     validates :profile, length: { maximum: 300 }
+    has_many :microposts
 end
