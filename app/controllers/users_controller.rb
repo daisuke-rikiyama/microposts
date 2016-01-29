@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   end
   
   def edit
+    logged_in_user
   end
   
   def update
