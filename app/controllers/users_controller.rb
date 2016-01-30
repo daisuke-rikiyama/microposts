@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update]
+  
   def show # 追加
     @user = User.find(params[:id])
     @microposts = @user.microposts.order(created_at: :desc)
@@ -20,7 +22,6 @@ class UsersController < ApplicationController
   end
   
   def edit
-    logged_in_user
   end
   
   def update
@@ -41,7 +42,11 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :age, :country, :email, :password, :password_confirmation, :profile)
   end
   
-  def set_user
-    @user = current_user
+  def correct_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      flash[:danger] = "Operation of a different user is prohibited"
+      redirect_to root_path
+    end
   end
 end

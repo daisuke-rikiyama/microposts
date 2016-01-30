@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get 'users/new'
 
   root to: 'static_pages#home'
-  get    'signup'   , to: 'users#new'
-  get    'settings' , to: 'users#edit'
+  get    'signup/'   , to: 'users#new'
+  get    'settings/:id' , to: 'users#edit' , as: 'settings'
   get    'login'    , to: 'sessions#new'
   post   'login'    , to: 'sessions#create'
   delete 'logout'   , to: 'sessions#destroy'
