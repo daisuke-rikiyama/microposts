@@ -61,6 +61,10 @@ class UsersController < ApplicationController
     @users = @user.follower_users.order(:id)
   end
   
+  def favorites
+    @user = User.find(params[:id])
+  end
+  
   private
   
   def user_params

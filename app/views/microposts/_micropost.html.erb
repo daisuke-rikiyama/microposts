@@ -6,6 +6,10 @@
         Posted <%= time_ago_in_words(micropost.created_at) %> ago.
         <% if current_user == micropost.user %>
             <%= link_to "delete", micropost, method: :delete, data: { confirm: "You sure?" } %>
+            <% if micropost.favorited_by? current_user %>
+                <%= link_to "Release Favorites", micropost_favorites_path(micropost), method: :delete, data: { confirm: "You sure?" } %>
+            <% else %>
+                <%= link_to "Add Favorites", micropost_favorites_path(micropost), method: :post %>
         <% end %>
     </span>
 </li>
