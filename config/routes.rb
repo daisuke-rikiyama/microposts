@@ -11,11 +11,14 @@ Rails.application.routes.draw do
   get    'users/:id/followings', to: 'users#followings', as: 'followings'
   get    'users/:id/followers' , to: 'users#followers',  as: 'followers'
   
-  resources :users
+  resources :users do
+    get 'favorites', on: :member
+  end
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts
+  resources :microposts do
+    resource :favorites, only: [:create, :destroy]
+  end
   resources :relationships, only: [:create, :destroy]
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
