@@ -27,12 +27,18 @@
         
         <% if @user.microposts.any? %>
             <h3>Microposts (<%= @user.microposts.count %>)</h3>
+            <!-- kaminari追加修正 -->
+            <%= page_entries_info @microposts %>
+            <!-- 修正終了 -->
             <ol class="microposts">
                 <%= render @microposts %>
             </ol>
         <% end %>
     </div>
 </div>
+<!-- 追加箇所開始 -->
+<%= paginate @microposts %>
+<!-- 追加箇所終了 -->
 <br>
 <br>
 <div class="row">
