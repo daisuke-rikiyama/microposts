@@ -40,6 +40,9 @@ group :development, :test do
   # Faker
   gem 'faker'
   gem 'faker-japanese'
+  
+  # kaminari
+  gem 'kaminari'
 end
 
 group :development do
