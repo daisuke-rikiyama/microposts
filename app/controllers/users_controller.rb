@@ -66,6 +66,10 @@ class UsersController < ApplicationController
     @favorites = @user.added_favorites.order(created_at: :desc).page(params[:page])
   end
   
+  def retweets
+    @user = User.find(params[:id])
+  end
+  
   private
   
   def user_params
