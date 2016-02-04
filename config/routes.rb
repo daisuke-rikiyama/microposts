@@ -13,10 +13,12 @@ Rails.application.routes.draw do
   
   resources :users do
     get 'favorites', on: :member
+    get 'retweets', on: :member
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts do
     resource :favorites, only: [:create, :destroy]
+    resource :retweets, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.

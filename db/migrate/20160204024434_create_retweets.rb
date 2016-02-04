@@ -5,6 +5,10 @@ class CreateRetweets < ActiveRecord::Migration
       t.integer :micropost_id
 
       t.timestamps null: false
+      
+      t.index :user_id
+      t.index :micropost_id
+      t.index :created_at
     end
   end
 end
