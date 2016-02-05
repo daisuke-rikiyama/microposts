@@ -43,6 +43,11 @@ group :development, :test do
   
   # kaminari
   gem 'kaminari'
+  
+  # carrierwave
+  gem 'carrierwave'
+  gem 'mini_magick'
+  gem 'fog'
 end
 
 group :development do
