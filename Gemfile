@@ -39,12 +39,12 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   
-  # Faker
-  gem 'faker'
-  gem 'faker-japanese'
 end
 
 group :test, :development, :production do
+  # Faker
+  gem 'faker'
+  gem 'faker-japanese'
   
   # kaminari
   gem 'kaminari'
