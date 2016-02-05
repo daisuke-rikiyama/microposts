@@ -40,6 +40,9 @@ group :development, :test do
   # Faker
   gem 'faker'
   gem 'faker-japanese'
+end
+
+group :test, :development, :production do
   
   # kaminari
   gem 'kaminari'
@@ -48,6 +51,7 @@ group :development, :test do
   gem 'carrierwave'
   gem 'mini_magick'
   gem 'fog'
+  
 end
 
 group :development do
