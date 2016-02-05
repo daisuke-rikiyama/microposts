@@ -8,6 +8,7 @@
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
 #  original_micropost_id :integer
+#  original_user_name    :string
 #
 # Indexes
 #
