@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      microost: "ツイート"
+    attributes:
+      micropost:
+        content: "内容"
+        created_at: "登録日時"
+        updated_at: "更新日時"
+        original_micropost_id: "リツイート元ID"
+        original_user_name: "リツイート元ユーザー名"
+        picture: "投稿画像"
